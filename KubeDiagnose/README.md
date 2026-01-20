@@ -213,6 +213,3 @@ kubernetes:
 | `SERVER_PORT` | HTTP server port | 8080 |
 | `KUBERNETES_KUBECONFIG_PATH` | Path to kubeconfig | ~/.kube/config |
 
-## License
-
-This project is for educational and demonstration purposes.
