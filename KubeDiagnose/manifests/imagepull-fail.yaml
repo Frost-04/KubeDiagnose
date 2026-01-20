@@ -1,0 +1,25 @@
+# ImagePullBackOff Pod
+# This pod references a non-existent image to trigger ImagePullBackOff
+# Use this to test the ImagePullBackOff/ErrImagePull detection in KubeDiagnose
+apiVersion: v1
+kind: Pod
+metadata:
+  name: imagepull-fail-pod
+  namespace: default
+  labels:
+    app: imagepull-test
+    scenario: imagepull-fail
+spec:
+  containers:
+    - name: bad-image-container
+      # This image does not exist and will cause ImagePullBackOff
+      image: non-existent-registry.io/fake-image:v999.999.999
+      ports:
+        - containerPort: 80
+      resources:
+        limits:
+          memory: "64Mi"
+          cpu: "100m"
+        requests:
+          memory: "32Mi"
+          cpu: "50m"

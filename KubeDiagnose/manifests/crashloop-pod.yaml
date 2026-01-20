@@ -1,0 +1,24 @@
+# CrashLoopBackOff Pod
+# This pod will continuously crash and enter CrashLoopBackOff state
+# Use this to test the CrashLoopBackOff detection in KubeDiagnose
+apiVersion: v1
+kind: Pod
+metadata:
+  name: crashloop-pod
+  namespace: default
+  labels:
+    app: crashloop-test
+    scenario: crashloop
+spec:
+  containers:
+    - name: crashloop-container
+      image: busybox:latest
+      # This command will exit immediately with error, causing CrashLoopBackOff
+      command: ["sh", "-c", "echo 'Starting...'; exit 1"]
+      resources:
+        limits:
+          memory: "64Mi"
+          cpu: "100m"
+        requests:
+          memory: "32Mi"
+          cpu: "50m"

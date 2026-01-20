@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: kube-diagnose
+  jackson:
+    serialization:
+      indent-output: true
+    default-property-inclusion: non_null
+
+# Kubernetes client configuration
+kubernetes:
+  # Path to kubeconfig file (default: ~/.kube/config)
+  # Set to null or remove to use in-cluster config when deployed to Kubernetes
+  kubeconfig-path: ${user.home}/.kube/config
+
+logging:
+  level:
+    com.kubediagnose: DEBUG
+    io.kubernetes.client: WARN
