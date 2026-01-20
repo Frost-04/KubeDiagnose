@@ -4,12 +4,12 @@ A modern, dark-mode Kubernetes debugging dashboard built with React, TypeScript,
 
 ## Features
 
-- 🔍 Debug Kubernetes Pods and Services visually
-- 📊 See all Pods and Services in a namespace at a glance
-- 🚨 Quick identification of Critical / Warning / Healthy resources
-- 📋 Detailed diagnostic information with copyable commands
-- 🔎 Manual search for specific pods or services
-- 🌙 Dark mode only, clean UI
+- Debug Kubernetes Pods and Services visually
+- See all Pods and Services in a namespace at a glance
+- Quick identification of Critical / Warning / Healthy resources
+- Detailed diagnostic information with copyable commands
+- Manual search for specific pods or services
+- Dark mode only, clean UI
 
 ## Tech Stack
 
